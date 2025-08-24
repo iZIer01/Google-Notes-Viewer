@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Google Notes Viewer</title>
+</head>
+<body>
+    <div class="mainContainer">
+        <section>
+            <h1>Google Notes Viewer</h1>
+            <button id="loginBtn">Login with Google</button>
+        </section>
+
+        <!-- Holding all the information -->
+        <div class="detailContainer">
+
+            <!-- Displaying userInfo -->
+            <section>
+                <div class="userInfo">
+                    <img src="#" alt="user-profile image">
+                    <div class="userDetail">
+                        <h3>Welcome,</h3><span id="userName">Sarah</span>
+                        <h4 id="userEmail">sarah@gmail.com</h4>
+                    </div>
+                </div>
+                <button id="logoutBtn">Logout</button>
+            </section>
+            
+            <hr>
+
+            <!-- Displaying Note section-->
+             <div class="noteContainer">
+                <h3>Notes:</h3>
+                <div class="notedetails">
+                    <label>Title 1</label>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium adipisci exercitationem nihil sit facilis consequatur, numquam voluptate quae cupiditate qui ipsam dolor dolores, tempora nisi rem veniam vero atque ipsum.</p>
+                </div>
+             </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
