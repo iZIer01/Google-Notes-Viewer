@@ -63,7 +63,7 @@ section .userInfo{
 
 .userDetail h4{
     font-weight: 100;
-    color: #696666d2;
+    color: #626060d2;
 }
 
 .userInfo img{
@@ -95,8 +95,9 @@ section .userInfo{
 }
 
 .noteDetails label{
-    font-size: 1.3rem;
     font-weight: 500;
+    font-size: 1.3rem;
+
 }
 
 .noteDetails p{
@@ -104,3 +105,16 @@ section .userInfo{
     font-size: 1rem;
 }
 
+.detailSubContainer{
+    display: flex;
+    font-size: 1rem;
+    align-items:baseline;    
+    margin-bottom: .8rem;
+}
+
+.detailContainer h4{
+    padding-left: .3rem;
+    font-size: .9rem;
+    font-weight: 550;
+    color: #949090c4;
+}
