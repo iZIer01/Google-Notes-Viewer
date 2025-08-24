@@ -1,4 +1,5 @@
- const notes = []
+const notes = []
+const newNotes = []
 
 fetch("https://jsonplaceholder.typicode.com/posts")
     .then(function(resp){
@@ -8,7 +9,16 @@ fetch("https://jsonplaceholder.typicode.com/posts")
         notes.push(data)
     })
     .then(()=>{
+        notes.forEach(group=>{
+            group.forEach(object=>{
+                newNotes.push(object)   
+                            
+            })
+        })
+    })
+    .then(()=>{
         randomNoteSelector()
+        
     })
     .catch(()=>{
         console.log("Sorry didn't manage to get data")
@@ -19,18 +29,24 @@ fetch("https://jsonplaceholder.typicode.com/posts")
 function randomNoteSelector(){
 
     //Provide a random number
-    let randomNumber = Math.floor(Math.random()*100) 
+    let randomNumber = Math.floor(Math.random() * newNotes.length) + 1  
 
-    //selecting the notes
+    //use the random number to select a note
+    let selectedNote = newNotes[randomNumber]
 
-    for(let i = 1; i <= notes.length; i++){
-        console.log(notes[0][randomNumber].userId)
+    //Now deciding a random number of how many notes get displayed
+    let repeatCount = Math.floor(Math.random() * 5) + 1    
+    
+
+
+    for(let i = 0; i <= repeatCount; i++){
+        displayNote(selectedNote)
     }
 
 }
 
 //display the notes
-function displayNote(){
+function displayNote(newNotes){
 
     //create html element
     const ul = document.querySelector("ul")    
@@ -52,10 +68,9 @@ function displayNote(){
     const noteText = div.querySelector(".noteText");
  
     // Passing value
-    title.innerText = "The Bible Introduction";
-    idNum.innerText = "By: Joao nkunku"
-    noteText.innerText = "For God who so loved this world,not only did He give up his son to die for our sin's but forgives us for them and loves us."
-
+    title.innerText = newNotes.title
+    idNum.innerText = `ID:${newNotes.id}`
+    noteText.innerText = newNotes.body
     // appending the following 
     li.appendChild(div)
     ul.appendChild(li)
@@ -63,4 +78,3 @@ function displayNote(){
 
 }
 
-displayNote()
