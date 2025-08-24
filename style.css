@@ -32,7 +32,37 @@ section h1{
 }
 
 section button{
-    padding: .5rem;
-    font-size: 1rem;
+    padding: .4rem;
+    font-size: .9rem;
     font-weight: 500;
 }
+
+.detailContainer{
+
+}
+
+.detailContainer section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+
+}
+
+section .userInfo{
+    display: flex;
+    align-items: center;
+}
+
+.userInfo .userDetail{
+    margin-left: 1rem;
+}
+
+.userInfo img{
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    object-position: center;
+    object-fit: cover;
+}
+
