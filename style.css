@@ -110,10 +110,10 @@ section .userInfo{
     font-size: 1rem;
     align-items:baseline;    
     margin-bottom: .8rem;
+    justify-content: space-between;
 }
 
 .detailContainer h4{
-    padding-left: .3rem;
     font-size: .9rem;
     font-weight: 550;
     color: #949090c4;
