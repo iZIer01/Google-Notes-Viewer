@@ -26,23 +26,23 @@ fetch("https://jsonplaceholder.typicode.com/posts")
 
 // Random note selector
 
-function randomNoteSelector(){
+function randomNoteSelector() {
+    // Decide how many notes to show
+    let noteCount = Math.floor(Math.random() * 5) + 1; 
 
-    //Provide a random number
-    let randomNumber = Math.floor(Math.random() * newNotes.length) + 1  
+    // Track which indexes have been used (to avoid duplicates)
+    const usedIndexes = new Set();
 
-    //use the random number to select a note
-    let selectedNote = newNotes[randomNumber]
+    while (usedIndexes.size < noteCount && usedIndexes.size < newNotes.length) {
+        let randomIndex = Math.floor(Math.random() * newNotes.length);
 
-    //Now deciding a random number of how many notes get displayed
-    let repeatCount = Math.floor(Math.random() * 5) + 1    
-    
-
-
-    for(let i = 0; i <= repeatCount; i++){
-        displayNote(selectedNote)
+        // Only use this note if it's not already picked
+        if (!usedIndexes.has(randomIndex)) {
+            usedIndexes.add(randomIndex);
+            let selectedNote = newNotes[randomIndex];
+            displayNote(selectedNote);
+        }
     }
-
 }
 
 //display the notes
